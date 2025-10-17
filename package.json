@@ -1,6 +1,6 @@
 {
-  "name": "web_allreal",
-  "version": "0.1.0",
+  "name": "allreal-website",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
