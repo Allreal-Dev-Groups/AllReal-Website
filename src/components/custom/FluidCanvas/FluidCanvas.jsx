@@ -19,7 +19,7 @@ export default function FluidCanvas() {
     <div className="fixed min-h-screen min-w-screen overflow-x-hidden z-0 hidden md:block">
       <div
         ref={containerRef}
-        className="min-h-screen min-w-screen z-0 overflow-hidden mix-blend-lighten"
+        className="min-h-screen min-w-screen z-0 overflow-hidden mix-blend-lighten backdrop-blur-2xl"
         style={{ pointerEvents: "auto"}}
       />
     </div>

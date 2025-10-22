@@ -38,7 +38,7 @@ export default function ServiceBoxes({ boxes }) {
       {boxes.map((box, i) => (
         <div
           key={i}
-          className="service-box flex flex-col justify-between bg-gray-800 md:bg-transparent rounded-2xl p-6 min-h-[180px] md:min-h-[300px] md:backdrop-blur-2xl shadow-xl text-center"
+          className="service-box flex flex-col border-amber-50/10 border-2 justify-between md:bg-transparent rounded-2xl p-6 min-h-[180px] md:min-h-[300px] md:backdrop-blur-2xl shadow-xl text-center"
           style={{ background: box.bgColor }}
           onMouseEnter={(e) => (e.currentTarget.style.background = box.hoverBg)}
           onMouseLeave={(e) => (e.currentTarget.style.background = box.bgColor)}

@@ -1,3 +1,7 @@
 export {default as Header} from "./Header/Header"
 export {default as Loader} from "./Loader/Loader"
 export {default as ContactStrip} from "./ContactStrip/ContactStrip"
+export {default as BlogHeader} from "./BlogHeader/BlogHeader"
+export {default as BlogRecentBox} from "./BlogRecentBox/BlogRecentBox"
+export {default as BlogGrid} from "./BlogGrid/BlogGrid"
+export {default as BlogGridBox} from "./BlogGridBox/BlogGridBox"

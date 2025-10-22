@@ -11,9 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased overflow-x-hidden bg-black! text-black">
+      <body className="antialiased overflow-x-hidden  bg-black! text-black">
         <Loader />
-        {/* <FluidCanvas />     */}
+        <FluidCanvas />    
+        <div className="fixed w-screen h-screen z-1  opacity-20 pointer-events-none  backdrop-blur-2xl bg-violet-800">
+
+        </div>
         <Header />
         <SmoothScroll>{children}</SmoothScroll>
         <CustomCursor />

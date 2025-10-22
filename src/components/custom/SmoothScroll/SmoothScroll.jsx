@@ -41,9 +41,7 @@ const SmoothScroll = forwardRef(({ children, onLenisInit }, ref) => {
     // Scroller Proxy (IMPORTANT)
     ScrollTrigger.scrollerProxy(internalRef.current, {
       scrollTop(value) {
-        return arguments.length
-          ? lenis.scrollTo(value)
-          : lenis.scroll;
+        return arguments.length ? lenis.scrollTo(value) : lenis.scroll;
       },
       getBoundingClientRect() {
         return {
@@ -73,7 +71,7 @@ const SmoothScroll = forwardRef(({ children, onLenisInit }, ref) => {
   return (
     <main
       ref={internalRef}
-      className="scrollContainer px-5 md:px-[6%] min-w-screen min-h-screen z-50 overflow-y-auto"
+      className={`scrollContainer px-5 md:px-[6%] min-w-screen min-h-screen z-50 overflow-y-auto`}
     >
       {children}
     </main>

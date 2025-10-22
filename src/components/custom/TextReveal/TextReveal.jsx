@@ -7,7 +7,7 @@ export default function WordLetterReveal({
   text = "Animate this text word by word and letter by letter",
   className = "",
   startColor = "#5e1aff",
-  endColor = "linear-gradient(to bottom left, #4d13db, #ffdeff)",
+  endColor = "#ffff",
   startY = "1rem",
   endY = "0rem",
   duration = 0.6,
