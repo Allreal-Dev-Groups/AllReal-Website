@@ -7,4 +7,4 @@ if (typeof window !== "undefined" && !gsap.core.globals().ScrollTrigger) {
   gsap.registerPlugin(SplitText);
 }
 
-export { gsap, ScrollTrigger,SplitText };
+export { gsap, ScrollTrigger, SplitText };

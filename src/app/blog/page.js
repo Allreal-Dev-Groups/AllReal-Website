@@ -1,21 +1,19 @@
-"use client";
+import { SmoothScroll } from "@/custom";
+import BlogHero from "@/page/Blog/BlogHero";
+import BlogList from "@/page/Blog/BlogList";
+import React from "react";
 
-import { BlogGrid, BlogHeader, BlogRecentBox } from "@/components/common";
-
-export default function Home() {
+const BlogPage = async () => {
+  const res = await fetch(`http://localhost:3002/api/blogs`, {
+    cache: "no-store",
+  });
+  const blogs = await res.json();
   return (
-    <section className="w-full md:w-[90%] min-h-screen flex flex-col items-center px-4 md:px-0 py-[30%] md:py-[10%]">
-      {/* Header */}
-      <BlogHeader />
-
-      {/* Recent Blog Box */}
-      <BlogRecentBox
-        date="Feb 02 2025"
-        title="Tentang Creativity Block pada UI Designer"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry..."
-        image={null} // or pass a URL
-      />
-      <BlogGrid/>
-    </section>
+    <>
+      <BlogHero blog={blogs[0]}/>
+      <BlogList blogs={blogs} />
+    </>
   );
-}
+};
+
+export default BlogPage;

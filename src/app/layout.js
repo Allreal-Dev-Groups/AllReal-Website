@@ -1,7 +1,16 @@
-import { CustomCursor, FluidCanvas, SmoothScroll } from "@/components/custom";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Loader from "@/components/common/Loader/Loader";
-import { Header } from "@/components/common";
+import { Header, Loader } from "@/components";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,15 +20,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased overflow-x-hidden  bg-black! text-black">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable}  antialiased overflow-x-hidden`}
+      >
         <Loader />
-        <FluidCanvas />    
-        <div className="fixed w-screen h-screen z-1  opacity-20 pointer-events-none  backdrop-blur-2xl bg-violet-800">
-
-        </div>
         <Header />
-        <SmoothScroll>{children}</SmoothScroll>
-        <CustomCursor />
+        {children}
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 import { SmoothScroll } from "@/custom";
-
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 export const metadata = {
   title: "Blog",
@@ -7,5 +7,9 @@ export const metadata = {
 };
 
 export default function BlogLayout({ children }) {
-  return <SmoothScroll>{children}</SmoothScroll>;
+  return (
+    <EdgeStoreProvider>
+      <SmoothScroll>{children}</SmoothScroll>
+    </EdgeStoreProvider>
+  );
 }
