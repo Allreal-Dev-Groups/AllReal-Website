@@ -1,6 +1,7 @@
-import { AboutSection, ContactSection, ExpertiseSection, HeroSection, StatusSection, TextScrollSection, VideoSection } from "@/page/Home";
+import { AboutSection, ContactSection, ExpertiseSection, HeroSection, StatusSection, Testimonials, TextScrollSection, VideoSection } from "@/page/Home";
 import { SmoothScroll } from "@/custom";
 import "./globals.css";
+
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <ExpertiseSection />
       <StatusSection />
       <TextScrollSection />
+      <Testimonials/>
       <ContactSection />
     </SmoothScroll>
   );

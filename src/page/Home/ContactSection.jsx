@@ -13,14 +13,14 @@ export default function ContactSection() {
           <TextFillSlide
             text="get in"
             isLeft={false}
-            baseColor="#EC4899"
+            baseColor="#00fff1"
             fillColor="#333"
             fontSize="10rem"
           />
           <TextFillSlide
             text="touch!"
             isLeft={true}
-            baseColor="#EC4899"
+            baseColor="#00fff1"
             fillColor="#333"
             fontSize="10rem"
           />

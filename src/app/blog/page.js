@@ -4,7 +4,7 @@ import BlogList from "@/page/Blog/BlogList";
 import React from "react";
 
 const BlogPage = async () => {
-  const res = await fetch(`http://localhost:3002/api/blogs`, {
+  const res = await fetch(`http://localhost:3000/api/blogs`, {
     cache: "no-store",
   });
   const blogs = await res.json();

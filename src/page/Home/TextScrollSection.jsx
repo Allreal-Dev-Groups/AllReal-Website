@@ -62,7 +62,7 @@ export default function TextScrollSection() {
         <InfiniteWordScroller
           words={["HELLO", "WORLD", "EXAMPLE", "TEXT", "EXAMPLE", "EXAMPLE"]}
           direction="left"
-          className="text-[#fc0352]"
+          className="text-[#00fff1]"
         />
       </div>
     </section>

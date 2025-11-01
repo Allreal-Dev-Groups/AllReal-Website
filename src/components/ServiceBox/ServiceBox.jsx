@@ -46,7 +46,7 @@ export default function ServiceBoxes({ boxes }) {
           <h3 className="text-lg sm:text-xl sm:p-2 md:text-2xl font-bold text-gray-300">
             {i+1}
           </h3>
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-pink-600">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#00fff1]">
             {box.title}
           </h3>
           <p className="mt-auto text-sm sm:text-base text-gray-300 text-justify">

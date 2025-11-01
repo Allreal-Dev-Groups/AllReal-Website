@@ -1,7 +1,7 @@
 export default {
-  brightness: 0.5,
+  brightness: 0.3,
   backgroundColor: "#000000",
-  colorPalette: ["#4e14dd", "#ff007a"],
+  colorPalette: ["#00fff1", "#7400ff"],
   colorRandomness: 0,
   inverted: false,
   simResolution: 30,

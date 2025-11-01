@@ -7,14 +7,14 @@ export default function AboutSection() {
         <TextFillSlide
           text="Who"
           isLeft={false}
-          baseColor="#EC4899"
+          baseColor="#00fff1"
           fillColor="#333"
           fontSize="8rem"
         />
         <TextFillSlide
           text="We Are"
           isLeft={true}
-          baseColor="#EC4899"
+          baseColor="#00fff1"
           fillColor="#333"
           fontSize="8rem"
         />

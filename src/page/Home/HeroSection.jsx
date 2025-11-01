@@ -11,11 +11,11 @@ export default function HeroSection() {
           highlights={[
             {
               phrase: "Healthcare Training",
-              color: "linear-gradient(180deg, #ff007a, #4e14dd)",
+              color: "linear-gradient(180deg, #00fff1, #4e14dd)",
             },
             {
               phrase: "Immersive Reality",
-              color: "linear-gradient(180deg, #ff007a, #4e14dd)",
+              color: "linear-gradient(180deg, #00fff1, #4e14dd)",
             },
           ]}
         />

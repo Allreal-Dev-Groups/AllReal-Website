@@ -35,14 +35,14 @@ export default function ExpertiseSection() {
           <TextFillSlide
             text="Our"
             isLeft={false}
-            baseColor="#EC4899"
+            baseColor="#00fff1"
             fillColor="#333"
             fontSize="7rem"
           />
           <TextFillSlide
             text="Expertise"
             isLeft={true}
-            baseColor="#EC4899"
+            baseColor="#00fff1"
             fillColor="#333"
             fontSize="7rem"
           />

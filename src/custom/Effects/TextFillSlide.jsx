@@ -7,7 +7,7 @@ export default function TextFillSlide({
   text = "Innovate Boldly",
   isLeft = false,
   baseColor = "white",
-  fillColor = "#EC4899",
+  fillColor = "#00fff1",
   fontSize = "4rem",
   mobileFontSize = "2.5rem",
   triggerOffset = "80%",
