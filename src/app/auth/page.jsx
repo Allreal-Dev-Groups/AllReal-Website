@@ -25,7 +25,7 @@ export default function AuthPage() {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Loading....</div>}>
       <div className="flex h-screen items-center justify-center bg-gray-950 text-white">
         <form
           onSubmit={handleSubmit}
