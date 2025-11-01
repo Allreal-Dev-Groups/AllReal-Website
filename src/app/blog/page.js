@@ -1,8 +1,19 @@
+import { SmoothScroll } from "@/custom";
+import BlogHero from "@/page/Blog/BlogHero";
+import BlogList from "@/page/Blog/BlogList";
+import React from "react";
 
-export default function Home() {
+const BlogPage = async () => {
+  const res = await fetch(`http://localhost:3000/api/blogs`, {
+    cache: "no-store",
+  });
+  const blogs = await res.json();
   return (
     <>
-      <h1>sdasdasdsa</h1>
+      <BlogHero blog={blogs[0]}/>
+      <BlogList blogs={blogs} />
     </>
   );
-}
+};
+
+export default BlogPage;

@@ -1,0 +1,5 @@
+export {default as Header} from "./Header/Header"
+export {default as Loader} from "./Loader/Loader"
+export {default as ServiceBox} from "./ServiceBox/ServiceBox"
+export {default as ContactPanel} from "./ContactPanel/ContactPanel"
+export {default as BlogBox} from "./BlogBox/BlogBox"
