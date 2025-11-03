@@ -115,9 +115,9 @@ export default function Testimonials() {
             {testimonials.map((t, index) => (
               <div
                 key={index}
-                className="testimonial-card min-w-[320px] md:min-w-[560px] min-h-[300px] p-7 rounded-2xl backdrop-blur-2xl border border-gray-800 shadow-lg  transition-all duration-300 group"
+                className="testimonial-card min-w-[320px] md:min-w-[560px] min-h-[100px] p-7 rounded-2xl backdrop-blur-2xl border border-gray-800 shadow-lg  transition-all duration-300 group"
               >
-                <div className="absolute inset-0 bg-gradient-to-br  from-amber-500/5 via-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"></div>
+                <div className="absolute inset-0  from-amber-500/5 via-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"></div>
 
                 <div className="relative  text-center">
                   <p className="text-gray-300 italic mb-6 text-lg leading-relaxed">

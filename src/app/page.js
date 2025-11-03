@@ -11,7 +11,7 @@ export default function Home() {
       <AboutSection />
       <ExpertiseSection />
       <StatusSection />
-      <TextScrollSection />
+      {/* <TextScrollSection /> */}
       <Testimonials/>
       <ContactSection />
     </SmoothScroll>

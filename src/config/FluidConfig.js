@@ -12,7 +12,7 @@ export default {
   splatRadius: 0.2,
   curl: 1,
   startSplats: 2,
-  splatAmount: 3,
+  splatAmount: 1,
   trigger: "move",
   hover: false,
 };
