@@ -1,24 +1,17 @@
 import { fetchClient } from "@/lib/fetchClient";
 import { BlogHero, BlogList } from "@/page/Blog";
+import React, { Suspense } from "react";
 
-
-import React from "react";
-
-const BlogPage = async () => {
-
+export default async function BlogPage() {
   const res = await fetchClient(`${process.env.URL}/api/blogs`, {
     cache: "no-store",
   });
   const blogs = await res.json();
 
-
-
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <BlogHero blog={blogs[0]} />
       <BlogList blogs={blogs} />
-    </>
+    </Suspense>
   );
-};
-
-export default BlogPage;
+}

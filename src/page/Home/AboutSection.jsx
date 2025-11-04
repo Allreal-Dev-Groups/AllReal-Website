@@ -27,11 +27,9 @@ export default function AboutSection() {
             virtual, augmented, and mixed reality to make healthcare learning
             safer, smarter, and more human-centered.
           </SubIntroText>
-          <Button name={"About Us"} className="mt-10" />
-          
+          <Button name={"About Us"}  className="mt-10" />
         </div>
       </div>
-
     </section>
   );
 }

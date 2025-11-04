@@ -2,39 +2,9 @@
 
 import React, { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/GsapConfig";
+import { testimonials } from "@/lib/siteConfig";
 
-const testimonials = [
-  {
-    name: "Ava Thompson",
-    role: "Creative Director, Nova Studio",
-    text: "Their design intuition and technical execution were flawless. The final product radiates quality and innovation.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-  },
-  {
-    name: "Liam Carter",
-    role: "CEO, PixelForge",
-    text: "An inspiring team that understands how to translate vision into experience. Every detail was handled with precision.",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
-  },
-  {
-    name: "Sofia Bennett",
-    role: "Lead Developer, Horizon Tech",
-    text: "Their collaborative approach and mastery of technology turned a complex concept into a seamless digital experience.",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
-  },
-  {
-    name: "Ethan Walker",
-    role: "Product Lead, Lumina Systems",
-    text: "The level of polish and detail blew us away. They elevated our entire product line.",
-    image: "https://randomuser.me/api/portraits/men/35.jpg",
-  },
-  {
-    name: "Mia Harper",
-    role: "UX Strategist, FlowMotion",
-    text: "Professionalism at its finest. The creative and technical balance was perfectly executed.",
-    image: "https://randomuser.me/api/portraits/women/32.jpg",
-  },
-];
+
 
 export default function Testimonials() {
   const sectionRef = useRef(null);
@@ -121,6 +91,9 @@ export default function Testimonials() {
                 </p>
                 <h3 className="text-xl font-semibold text-[#7400ff]">
                   {t.name}
+                </h3>
+                <h3 className="text-sx font-medium text-white">
+                  {t.role}
                 </h3>
               </div>
             </div>
