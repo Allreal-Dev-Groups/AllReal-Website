@@ -16,6 +16,7 @@ import "./TiptapStyles.css";
 // --- Custom Components & Hooks ---
 import MenuBar from "./MenuBar";
 import { useEdgeStore } from "@/lib/edgestore";
+import { fetchClient } from "@/lib/fetchClient";
 
 /**
  * --- Rich Text Editor with Tags, EdgeStore Upload & MongoDB Payload ---
@@ -133,11 +134,13 @@ const RichEditor = () => {
     console.log(payload);
     console.log("--------------------------------------------------");
 
-    await fetch("/api/blogs", {
+    await fetchClient("/api/blogs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    });
+    }).then(()=>{
+      alert("Posted...")
+    })
   }, [jsonContent, htmlContent, description, bannerImage, tags]);
 
   // --- JSX UI ---

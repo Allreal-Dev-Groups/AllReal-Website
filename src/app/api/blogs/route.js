@@ -1,16 +1,18 @@
 import BlogSchema from "@/lib/BlogSchema";
-import { DB_Connection } from "@/lib/DB_Connection";
+import { dbConnect } from "@/lib/dbConnect";
+
 
 
 
 export async function GET() {
-  await DB_Connection();
+  await dbConnect();
   const blogs = await BlogSchema.find().sort({ createdAt: -1 });
+  console.log("sss",blogs)
   return Response.json(blogs);
 }
 
 export async function POST(req) {
-  await DB_Connection();
+  await dbConnect();
   const data = await req.json();
   const blog = await BlogSchema.create(data);
   return Response.json(blog);

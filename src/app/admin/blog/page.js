@@ -1,12 +1,21 @@
-import RichEditor from "@/components/RichEditor/RichEditor";
+import { fetchClient } from "@/lib/fetchClient";
+import { BlogHero, BlogList } from "@/page/Blog";
+import Link from "next/link";
+
 import React from "react";
 
-const page = () => {
+const BlogPage = async () => {
+  const res = await fetchClient(`http://localhost:3000/api/blogs`, {
+    cache: "no-store",
+  });
+  const blogs = await res.json();
+
   return (
-    <section className="w-full min-h-screen flex flex-col items-center px-1 md:px-0 py-[5%]">
-      <RichEditor />
-    </section>
+    <>
+      <BlogHero isAdmin={true}  blog={blogs[0]} />
+      <BlogList isAdmin={true} blogs={blogs} />
+    </>
   );
 };
 
-export default page;
+export default BlogPage;

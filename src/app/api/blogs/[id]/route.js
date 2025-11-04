@@ -1,28 +1,19 @@
 import BlogSchema from "@/lib/BlogSchema";
-import { DB_Connection } from "@/lib/DB_Connection";
-
-
-
-
+import { dbConnect } from "@/lib/dbConnect";
 import { NextResponse } from "next/server";
 
-
-export async function GET(request, { params }) {
-    console.log("text",params)
+export async function GET(request, {params  }) {
+  const { id} = await params;
   try {
-    await DB_Connection();
-    const blog = await BlogSchema.findById(params.id).lean();
+    await dbConnect();
+    const blog = await BlogSchema.findById(id).lean();
 
     if (!blog) {
-      return NextResponse.json(
-        { error: "Blog not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Blog not found" }, { status: 404 });
     }
 
     // Optional: If you're storing Markdown, you might convert it to HTML here
     return NextResponse.json(blog, { status: 200 });
-
   } catch (error) {
     console.error("Error fetching blog:", error);
     return NextResponse.json(
@@ -32,16 +23,27 @@ export async function GET(request, { params }) {
   }
 }
 
-
 export async function PUT(req, { params }) {
-  await DB_Connection();
+  await dbConnect();
   const data = await req.json();
-  const blog = await BlogSchema.findByIdAndUpdate(params.id, data, { new: true });
+  const blog = await BlogSchema.findByIdAndUpdate(params.id, data, {
+    new: true,
+  });
   return Response.json(blog);
 }
 
-export async function DELETE(_, { params }) {
-  await DB_Connection();
-  await BlogSchema.findByIdAndDelete(params.id);
-  return Response.json({ success: true });
+export async function DELETE(request, { params }) {
+  try {
+    await dbConnect();
+    const { id } = await params;
+
+    const deleted = await BlogSchema.findByIdAndDelete(id);
+    if (!deleted)
+      return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (error) {
+    console.error("Error deleting blog:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+  }
 }

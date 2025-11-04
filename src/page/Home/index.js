@@ -3,6 +3,5 @@ export { default as VideoSection } from "./VideoSection";
 export { default as AboutSection } from "./AboutSection";
 export { default as ExpertiseSection } from "./ExpertiseSection";
 export { default as StatusSection } from "./StatusSection";
-export { default as TextScrollSection } from "./TextScrollSection";
-export { default as Testimonials } from "./Testimonials";
 export { default as ContactSection } from "./ContactSection";
+export { default as Testimonials } from "./Testimonials";

@@ -1,40 +1,26 @@
 "use client";
 
-import { ContactPanel } from "@/components";
-import _BrandData from "@/config/BrandConfig";
-import { TextFillSlide } from "@/custom";
+import { ContactPanel, SectionTitle } from "@/components";
+import { siteConfig } from "@/lib/siteConfig";
+
+
 
 export default function ContactSection() {
   return (
-    <section className="selectionContainer text-left flex  min-h-screen overflow-hidden  text-white">
-      <div className="w-full h-full mt-10 gap-10 flex justify-between flex-col">
-        {/* Animated Heading */}
-        <div className="w-full text-left flex flex-col">
-          <TextFillSlide
-            text="get in"
-            isLeft={false}
-            baseColor="#00fff1"
-            fillColor="#333"
-            fontSize="10rem"
-          />
-          <TextFillSlide
-            text="touch!"
-            isLeft={true}
-            baseColor="#00fff1"
-            fillColor="#333"
-            fontSize="10rem"
-          />
-        </div>
-
+    <section className="w-full px-5  mb-10 flex flex-col gap-16 overflow-hidden">
+      <div className="w-full flex flex-col ">
+        <SectionTitle Line_1="Get In" Line_2="Touch!" fontSize="9rem" />
+      </div>
+      <div>
         {/* Contact Section */}
         <div
           id="Contact"
           className="w-full mt-10 flex flex-col items-center justify-center"
         >
           <ContactPanel
-            email={_BrandData.email}
-            phone={_BrandData.phone}
-            address={_BrandData.loacation}
+            email={siteConfig.email}
+            phone={siteConfig.phone}
+            address={siteConfig.loacation}
           />
         </div>
         <div
@@ -47,7 +33,7 @@ export default function ContactSection() {
         </div>
         <div className="relative w-full h-fit flex justify-center items-start overflow-hidden z-50 pointer-events-none">
           <img
-            src="./assets/images/footer-logo.png"
+            src="/images/footer-logo.png"
             className="pointer-events-none opacity-20 "
           />
         </div>

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "@/config/GsapConfig";
-import { useRouter } from "next/navigation"; // ✅ import router hook
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "@/lib/GsapConfig";
+import { useRouter } from "next/navigation";
+
 
 export default function BlogBox({
   _id,
@@ -13,10 +14,18 @@ export default function BlogBox({
   tags = [],
   createdAt,
   updatedAt,
+  isAdmin=false
 }) {
-  const boxRef = useRef(null);
-  const router = useRouter(); // ✅ initialize router
 
+ 
+  const boxRef = useRef(null);
+  const router = useRouter();
+
+  console.log(isAdmin)
+  // ✅ Check admin cookie
+
+
+  // ✅ GSAP appear animation
   useEffect(() => {
     if (!boxRef.current) return;
     gsap.fromTo(
@@ -33,17 +42,53 @@ export default function BlogBox({
     );
   }, []);
 
+  // ✅ Navigation handler
   const handleNavigate = () => {
-    router.push(`/blog/${_id}`); // ✅ navigate on click
+    router.push(`/blog/${_id}`);
+  };
+
+  // ✅ Delete blog handler
+  const handleDelete = async (e) => {
+    e.stopPropagation(); // prevent routing on click
+    const confirmDelete = window.confirm(`Delete blog "${title}"?`);
+    if (!confirmDelete) return;
+
+    try {
+      const res = await fetch(`/api/blogs/${_id}`, { method: "DELETE" });
+      if (!res.ok) throw new Error("Failed to delete blog");
+
+      // Smooth removal animation
+      gsap.to(boxRef.current, {
+        opacity: 0,
+        y: -20,
+        scale: 0.95,
+        duration: 0.4,
+        ease: "power2.in",
+        onComplete: () => boxRef.current.remove(),
+      });
+    } catch (err) {
+      console.error(err);
+      alert("Error deleting blog. Check console for details.");
+    }
   };
 
   return (
     <article
       ref={boxRef}
-      onClick={handleNavigate} // ✅ use function, not direct call
-      className="group w-full flex flex-col bg-[#151515]/60 backdrop-blur-2xl rounded-2xl overflow-hidden shadow-lg hover:shadow-amber-500/20 transition-all duration-300 hover:-translate-y-1 transform-gpu min-h-[420px] cursor-pointer"
+      onClick={handleNavigate}
+      className="group relative w-full flex flex-col bg-[#151515]/60 backdrop-blur-2xl rounded-2xl overflow-hidden shadow-lg hover:shadow-amber-500/20 transition-all duration-300 hover:-translate-y-1 transform-gpu min-h-[420px] cursor-pointer"
     >
-      {/* Image Section */}
+      {/* ✅ Delete Button (Admin Only) */}
+      {isAdmin && (
+        <button
+          onClick={handleDelete}
+          className="absolute top-3 left-3 z-20 bg-red-600/80 text-white px-3 py-1 text-xs md:text-sm rounded-md hover:bg-red-700/90 transition-colors"
+        >
+          Delete
+        </button>
+      )}
+
+      {/* Banner Image */}
       <div className="relative w-full h-64 md:h-[300px] overflow-hidden bg-[#2b2b2b] flex items-center justify-center">
         {bannerImageUrl ? (
           <img

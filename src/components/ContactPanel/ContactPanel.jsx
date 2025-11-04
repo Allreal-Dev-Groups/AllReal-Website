@@ -1,6 +1,6 @@
 "use client";
 
-import { gsap, ScrollTrigger } from "@/config/GsapConfig";
+import { gsap, ScrollTrigger } from "@/lib/GsapConfig";
 import { useEffect, useRef } from "react";
 
 export default function ContactPanel({

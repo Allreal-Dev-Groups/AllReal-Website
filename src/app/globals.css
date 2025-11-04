@@ -1,25 +1,44 @@
 @import "tailwindcss";
+
 @font-face {
   font-family: "Nico Moji";
-  src: url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.eot");
   src: url("https://db.onlinewebfonts.com/t/73c00071d90ecfb78bf0ccdeda529307.woff")
     format("woff");
   font-display: swap;
+}
 
-}
-:root {
-  --background: #000000;
-  --foreground: #d47af2;
-  --font-nicomoji: "Nico Moji";
-}
 @theme {
-  --font-brandFont: var(--font-nicomoji);
+  --font-nicomoji: "Nico Moji";
+  --color-primary: #6b00d6;
+  --color-secondary: #651ffe;
+  --color-bg: #121315;
+  --color-neutral: #000000;
+  --color-gradient_from: #36fafe;
+  --color-gradient_to: #a264ee;
 }
+
+
+[data-theme="light"] {
+  --color-primary: #1e1e1e;
+  --color-secondary: #ffffff;
+  --color-bg: #f5b301;
+  --color-neutral: #eaeaea;
+}
+
+[data-theme="dark"] {
+  --color-primary: #00fff0;
+  --color-secondary: #0d0d0d;
+  --color-bg: #ff00c8;
+  --color-neutral: #101010;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding: 0;
+  background-color: var(--color-bg);
+
+  color: var(--color-primary);
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 
-    

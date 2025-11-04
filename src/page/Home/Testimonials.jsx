@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { gsap, ScrollTrigger } from "@/config/GsapConfig";
+import { gsap, ScrollTrigger } from "@/lib/GsapConfig";
 
 const testimonials = [
   {
@@ -102,34 +102,31 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <main className="relative overflow-hidden min-h-screen/2  text-white flex flex-col items-center  px-6 py-24">
+    <section className="relative overflow-hidden w-full min-h-[500px] md:min-h-[600px]  text-white flex flex-col justify-center items-center">
+      <div className="relative overflow-hidden">
+        <div
+          ref={carouselRef}
+          className="flex gap-10 p-3 justify-start items-center will-change-transform"
+        >
+          {testimonials.map((t, index) => (
+            <div
+              key={index}
+              className="testimonial-card min-w-[200] md:min-w-[560px] min-h-[200px] p-7 rounded-2xl backdrop-blur-2xl border border-gray-800 shadow-lg  transition-all duration-300 group"
+            >
+              <div className="absolute inset-0  from-amber-500/5 via-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"></div>
 
-
-
-        {/* Carousel Container */}
-        <div className="relative overflow-hidden">
-          <div
-            ref={carouselRef}
-            className="flex gap-10 p-3 justify-start items-center will-change-transform"
-          >
-            {testimonials.map((t, index) => (
-              <div
-                key={index}
-                className="testimonial-card min-w-[320px] md:min-w-[560px] min-h-[100px] p-7 rounded-2xl backdrop-blur-2xl border border-gray-800 shadow-lg  transition-all duration-300 group"
-              >
-                <div className="absolute inset-0  from-amber-500/5 via-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"></div>
-
-                <div className="relative  text-center">
-                  <p className="text-gray-300 italic mb-6 text-lg leading-relaxed">
-                    “{t.text}”
-                  </p>
-                  <h3 className="text-xl font-semibold text-[#7400ff]">{t.name}</h3>
-        
-                </div>
+              <div className="relative  text-center">
+                <p className="text-gray-300 italic mb-6 text-lg leading-relaxed">
+                  “{t.text}”
+                </p>
+                <h3 className="text-xl font-semibold text-[#7400ff]">
+                  {t.name}
+                </h3>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-    </main>
+      </div>
+    </section>
   );
 }

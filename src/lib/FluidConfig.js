@@ -1,0 +1,18 @@
+export default {
+  brightness: 0.3,
+  backgroundColor: "#000000",
+  colorPalette: ["#00fff1", "#7400ff"],
+  simResolution: 128,
+  dyeResolution: 1024,
+  densityDissipation: 1,
+  velocityDissipation: 0.1,
+  pressureIterations: 0.3,
+  splatRadius: 0.2,
+  curl: 1,
+  startSplats: 2,
+  splatAmount: 2,
+  trigger: "move",
+  hover: false,
+  colorRandomness: 0,
+  inverted: false,
+};

@@ -3,9 +3,7 @@
 import { useState, useMemo } from "react";
 import { BlogBox } from "@/components";
 
-
-
-export default function BlogList({ blogs }) {
+export default function BlogList({ blogs, isAdmin=false }) {
   const [selectedTag, setSelectedTag] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -67,7 +65,9 @@ export default function BlogList({ blogs }) {
             <p>Loading...</p>
           </div>
         ) : filteredPosts.length > 0 ? (
-          filteredPosts.map((post) => <BlogBox key={post._id} {...post} />)
+          filteredPosts.map((post) => (
+            <BlogBox key={post._id} isAdmin={isAdmin} {...post} />
+          ))
         ) : (
           <div className="col-span-full flex justify-center text-gray-400">
             <p>No posts found.</p>

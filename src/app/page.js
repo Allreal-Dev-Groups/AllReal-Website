@@ -1,19 +1,17 @@
-import { AboutSection, ContactSection, ExpertiseSection, HeroSection, StatusSection, Testimonials, TextScrollSection, VideoSection } from "@/page/Home";
-import { SmoothScroll } from "@/custom";
-import "./globals.css";
+"use client";
+import { AboutSection, ContactSection, ExpertiseSection, HeroSection, StatusSection, Testimonials, VideoSection } from "@/page/Home";
 
 
 export default function Home() {
   return (
-    <SmoothScroll>
+    <>
       <HeroSection />
       <VideoSection />
       <AboutSection />
-      <ExpertiseSection />
       <StatusSection />
-      {/* <TextScrollSection /> */}
-      <Testimonials/>
+      <ExpertiseSection />
+      <Testimonials />
       <ContactSection />
-    </SmoothScroll>
+    </>
   );
 }

@@ -1,9 +1,9 @@
+import { fetchClient } from "@/lib/fetchClient";
 import "./BlogViewPage.css";
 
 export default async function BlogPage({ params }) {
   const { id } = await params;
-
-  const res = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+  const res = await fetchClient(`http://localhost:3000/api/blogs/${id}`, {
     cache: "no-store",
   });
 

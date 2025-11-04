@@ -1,6 +1,4 @@
-import { ServiceBox } from "@/components";
-import { TextFillSlide } from "@/custom";
-
+import { ImageBox, SectionTitle } from "@/components";
 
 const boxesData = [
   {
@@ -29,25 +27,28 @@ We act as a technical partner for institutions seeking innovation in AR/VR healt
 
 export default function ExpertiseSection() {
   return (
-    <section className="w-full min-h-screen px-5 flex flex-col gap-5 items-center justify-around  overflow-hidden">
-
-        <div className="w-full  items-center  flex flex-col">
-          <TextFillSlide
-            text="Our"
-            isLeft={false}
-            baseColor="#00fff1"
-            fillColor="#333"
-            fontSize="7rem"
-          />
-          <TextFillSlide
-            text="Expertise"
-            isLeft={true}
-            baseColor="#00fff1"
-            fillColor="#333"
-            fontSize="7rem"
-          />
-        </div>
-        <ServiceBox boxes={boxesData} />
+    <section className="w-full px-5 md:min-h-screen mb-10 flex flex-col gap-16 overflow-hidden">
+      <div className="w-full flex flex-col items-center">
+        <SectionTitle Line_1="our" Line_2="Expertise" />
+      </div>
+      <div className="w-full flex flex-col gap-5">
+        <ImageBox
+          image="/images/sampleblogimg.jpg"
+          title="Innovating Medical Education"
+          text="We redefine how medical professionals learn and collaborate through immersive virtual experiences."
+        />
+        <ImageBox
+          image="/images/sampleblogimg.jpg"
+          title="Innovating Medical Education"
+          text="We redefine how medical professionals learn and collaborate through immersive virtual experiences."
+          reverse={true}
+        />
+        <ImageBox
+          image="/images/sampleblogimg.jpg"
+          title="Innovating Medical Education"
+          text="We redefine how medical professionals learn and collaborate through immersive virtual experiences."
+        />
+      </div>
     </section>
   );
 }

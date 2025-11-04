@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { gsap } from "@/config/GsapConfig";
-import navOption from "@/config/navConfig";
-import _BrandData from "@/config/BrandConfig";
+import { navOption,siteConfig } from "@/lib/siteConfig";
+import { gsap } from "@/lib/GsapConfig";
+
 
 export default function MenuDrawer({ isOpen, onToggle }) {
   const overlayRef = useRef(null);
@@ -24,7 +24,7 @@ export default function MenuDrawer({ isOpen, onToggle }) {
     if (!overlayRef.current) return;
     gsap.to(overlayRef.current, {
       y: isOpen ? 0 : "100%",
-      borderRadius: isOpen ? "0%" : "100%",
+      borderRadius: isOpen ? "0%" : "50%",
       duration: isOpen ? 0.6 : 0.5,
       ease: isOpen ? "power3.out" : "power3.in",
     });
@@ -54,7 +54,7 @@ export default function MenuDrawer({ isOpen, onToggle }) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 w-screen h-screen  z-100 border-[#5e1aff] backdrop-blur-3xl flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 w-screen h-screen  z-100 border-[#5e1aff] backdrop-blur-3xl flex flex-col items-center justify-center overflow-x-hidden"
       style={{ transform: "translateY(100%)" }}
     >
       {/* Close Button */}
@@ -66,7 +66,7 @@ export default function MenuDrawer({ isOpen, onToggle }) {
       </button>
 
       {/* Navigation Items */}
-      <div className="relative flex flex-col gap-1 md:gap-4 text-center md:text-left z-20">
+      <div className="relative flex flex-col min-w-[30%]  gap-1 md:gap-4 text-center md:text-left z-20">
         {navOption.map((item, i) => (
           <Link
             key={i}
@@ -75,47 +75,15 @@ export default function MenuDrawer({ isOpen, onToggle }) {
             ref={(el) => (linksRef.current[i] = el)}
             onMouseEnter={() => handleHover(i)}
             onMouseLeave={() => handleHoverOut(i)}
-            className="relative text-3xl md:text-5xl font-bold text-gray-300 overflow-hidden px-4 py-2 inline-block"
+            className="relative text-3xl md:text-5xl  font-bold text-gray-300 overflow-hidden px-4 py-2 inline-block"
           >
             <span className="relative z-10">{item.name}</span>
-            <span className="fill absolute left-0 top-0 h-full w-0 bg-[#5e1aff] z-0"></span>
+            <span className="fill absolute left-0 top-0 h-full w-0 rounded-br-2xl rounded-tl-2xl bg-white  z-0 "></span>
           </Link>
         ))}
       </div>
 
-      {/* Social & Contact Info */}
-      <div className="absolute bottom-12 flex flex-col items-center gap-4 text-gray-300 z-20">
-        {/* Social Links */}
-        <div className="flex gap-6">
-          {Object.entries(_BrandData.socialLinks).map(([name, url]) => (
-            <a
-              key={name}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#5e1aff] transition-colors duration-300"
-            >
-              {name}
-            </a>
-          ))}
-        </div>
 
-        {/* Contact Info */}
-        <div className="flex flex-col items-center text-gray-400 text-sm ">
-          <a
-            href={`mailto:${_BrandData.email}`}
-            className="hover:text-[#5e1aff] transition-colors duration-300"
-          >
-            {_BrandData.email}
-          </a>
-          <a
-            href={`tel:${_BrandData.phone}`}
-            className="hover:text-[#5e1aff] transition-colors duration-300"
-          >
-            {_BrandData.phone}
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
