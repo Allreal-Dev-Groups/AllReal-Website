@@ -2,7 +2,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/siteConfig";
 import ThemeProvider from "@/components/layout/ThemeProvider";
 import LenisProvider from "@/components/layout/LenisProvider";
-import { Header } from "@/components";
+import { Header, SplashCursor } from "@/components";
 
 
 export const metadata = {
@@ -14,6 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="default">
       <body className="antialiased overflow-x-hidden">
+        
+        <SplashCursor/>
         <ThemeProvider>
           <Header />
           <LenisProvider>{children}</LenisProvider>
