@@ -134,7 +134,7 @@ const RichEditor = () => {
     console.log(payload);
     console.log("--------------------------------------------------");
 
-    await fetchClient("/api/blogs", {
+    await fetchClient(`${process.env.URL}/api/blogs`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

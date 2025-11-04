@@ -6,7 +6,7 @@ import React from "react";
 
 const BlogPage = async () => {
 
-  const res = await fetchClient(`/api/blogs`, {
+  const res = await fetchClient(`${process.env.URL}/api/blogs`, {
     cache: "no-store",
   });
   const blogs = await res.json();

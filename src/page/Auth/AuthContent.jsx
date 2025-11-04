@@ -17,7 +17,7 @@ export default function AuthContent() {
   // ... (rest of your component logic remains the same)
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetchClient("/api/auth", {
+    const res = await fetchClient(`${process.env.URL}/api/auth`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password, target: redirectTo }),
