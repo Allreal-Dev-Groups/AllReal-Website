@@ -6,13 +6,13 @@ import React from "react";
 
 const BlogPage = async () => {
 
-  const res = await fetchClient(`http://localhost:3000/api/blogs`, {
+  const res = await fetchClient(`/api/blogs`, {
     cache: "no-store",
   });
   const blogs = await res.json();
 
 
-  
+
   return (
     <>
       <BlogHero blog={blogs[0]} />
