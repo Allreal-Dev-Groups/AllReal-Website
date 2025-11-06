@@ -1,14 +1,15 @@
 // app/auth/AuthContent.jsx
-'use client';
+"use client";
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { fetchClient } from "@/lib/fetchClient";
 import { useAdmin } from "@/store/adminStore";
 
+
 export default function AuthContent() {
   const [password, setPassword] = useState("");
-  const { setAdmin} = useAdmin()
+  const { setAdmin } = useAdmin();
   const [error, setError] = useState("");
   const searchParams = useSearchParams();
   // The line below is causing the issue during SSR/Prerendering
@@ -17,22 +18,23 @@ export default function AuthContent() {
   // ... (rest of your component logic remains the same)
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetchClient(`${process.env.URL}/api/auth`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password, target: redirectTo }),
-    });
+    // const res = await fetchClient(`${process.env.NEXT_PUBLIC_URL}/api/auth`, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ password, target: redirectTo }),
+    // });
 
-    if (res.ok) {
-      window.location.href = `/${redirectTo}`;
-      setAdmin(true)
+    if (password == "admin@321") {
+      window.cookieStore.set("page_unlocked_admin",true);
+      window.location.href = `/admin`;
+      setAdmin(true);
     } else {
       setError("Incorrect password. Try again.");
     }
   };
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-950 text-white">
+    <div className="flex h-screen items-center justify-center  text-white">
       <form
         onSubmit={handleSubmit}
         className="bg-gray-900 p-10 rounded-2xl shadow-xl space-y-4 w-80"

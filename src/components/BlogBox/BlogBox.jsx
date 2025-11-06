@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "@/lib/GsapConfig";
 import { useRouter } from "next/navigation";
+import { fetchClient } from "@/lib/fetchClient";
 
 
 export default function BlogBox({
@@ -54,7 +55,7 @@ export default function BlogBox({
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`/api/blogs/${_id}`, { method: "DELETE" });
+      const res = await fetchClient(`${process.env.URL}/api/blogs/${_id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Failed to delete blog");
 
       // Smooth removal animation
