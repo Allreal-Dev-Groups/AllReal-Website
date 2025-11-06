@@ -1,30 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/GsapConfig";
 import { useRouter } from "next/navigation";
-import { fetchClient } from "@/lib/fetchClient";
-
+import { fetchDelete  } from "@/lib/fetchClient";
 
 export default function BlogBox({
   _id,
   title,
-  contentHtml,
+
   description,
   bannerImageUrl,
   tags = [],
   createdAt,
   updatedAt,
-  isAdmin=false
+  isAdmin = false,
 }) {
-
- 
   const boxRef = useRef(null);
   const router = useRouter();
 
-  console.log(isAdmin)
+  console.log(isAdmin);
   // ✅ Check admin cookie
-
 
   // ✅ GSAP appear animation
   useEffect(() => {
@@ -55,18 +51,10 @@ export default function BlogBox({
     if (!confirmDelete) return;
 
     try {
-      const res = await fetchClient(`${process.env.URL}/api/blogs/${_id}`, { method: "DELETE" });
+      const res = await fetchDelete({ _id: _id });
       if (!res.ok) throw new Error("Failed to delete blog");
 
-      // Smooth removal animation
-      gsap.to(boxRef.current, {
-        opacity: 0,
-        y: -20,
-        scale: 0.95,
-        duration: 0.4,
-        ease: "power2.in",
-        onComplete: () => boxRef.current.remove(),
-      });
+
     } catch (err) {
       console.error(err);
       alert("Error deleting blog. Check console for details.");

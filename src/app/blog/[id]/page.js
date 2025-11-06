@@ -3,7 +3,7 @@ import "./BlogViewPage.css";
 
 export default async function BlogPage({ params }) {
   const { id } = await params;
-  const res = await fetchClient(`${process.env.URL}/api/blogs/${id}`, {
+  const res = await fetchClient(`/api/blogs/${id}`, {
     cache: "no-store",
   });
 

@@ -12,6 +12,7 @@ export async function GET() {
 }
 
 export async function POST(req) {
+  console.log(req)
   await dbConnect();
   const data = await req.json();
   const blog = await BlogSchema.create(data);

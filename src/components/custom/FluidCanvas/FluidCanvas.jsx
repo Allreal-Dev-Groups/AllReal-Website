@@ -1,9 +1,11 @@
 "use client";
 
+import { useAdmin } from "@/store/adminStore";
 import { useEffect, useRef } from "react";
 import WebGLFluidEnhanced from "webgl-fluid-enhanced";
 
 export default function FluidCanvas() {
+  const { isAdmin } = useAdmin();
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function FluidCanvas() {
     // Cleanup GPU memory on unmount
     return () => simulation?.destroy?.();
   }, []);
-
+  if (isAdmin) return null;
   return (
     <div
       ref={canvasRef}
