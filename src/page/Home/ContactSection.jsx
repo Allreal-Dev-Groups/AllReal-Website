@@ -28,7 +28,7 @@ export default function ContactSection() {
           className="w-full mt-10 flex flex-col items-center justify-center"
         >
           <a href="#" className="pointer-events-auto text-pink-700 z-70">
-            Machenn Pvt Ltd @2025
+            Machenn Innovations Pvt Ltd @2025
           </a>
         </div>
         <div className="relative w-full h-fit flex justify-center items-start overflow-hidden z-50 pointer-events-none">

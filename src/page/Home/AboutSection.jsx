@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section className="w-full px-5 md:min-h-screen mb-10 flex flex-col gap-16 ">
       <div className="w-full flex flex-col items-center md:items-start">
-        <SectionTitle Line_1="Who" Line_2="we Our" />
+        <SectionTitle Line_1="Who" Line_2="we are" />
       </div>
       <div className="w-full flex justify-start">
         <div className="md:max-w-[50%] md:text-2xl">

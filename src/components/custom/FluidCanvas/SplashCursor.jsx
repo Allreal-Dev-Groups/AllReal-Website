@@ -16,6 +16,7 @@ function SplashCursor({
   COLOR_UPDATE_SPEED = 0,
   BACK_COLOR = { r: 0.5, g: 0.01, b: 0.5 },
   TRANSPARENT = true,
+  PALETTE = [{ r: 109 / 255, g: 186 / 255, b: 255 / 255 }],
 }) {
   const canvasRef = useRef(null);
 
@@ -1065,56 +1066,11 @@ function SplashCursor({
     }
 
     function generateColor() {
-      let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
-      c.b *= 0.15;
-      return c;
+      const c = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+      return { r: c.r * 0.15, g: c.g * 0.2, b: c.b * 0.15 };
     }
 
-    function HSVtoRGB(h, s, v) {
-      let r, g, b, i, f, p, q, t;
-      i = Math.floor(h * 6);
-      f = h * 6 - i;
-      p = v * (1 - s);
-      q = v * (1 - f * s);
-      t = v * (1 - (1 - f) * s);
-      switch (i % 6) {
-        case 0:
-          r = v;
-          g = t;
-          b = p;
-          break;
-        case 1:
-          r = q;
-          g = v;
-          b = p;
-          break;
-        case 2:
-          r = p;
-          g = v;
-          b = t;
-          break;
-        case 3:
-          r = p;
-          g = q;
-          b = v;
-          break;
-        case 4:
-          r = t;
-          g = p;
-          b = v;
-          break;
-        case 5:
-          r = v;
-          g = p;
-          b = q;
-          break;
-        default:
-          break;
-      }
-      return { r, g, b };
-    }
+
 
     function wrap(value, min, max) {
       const range = max - min;
