@@ -16,7 +16,7 @@ function SplashCursor({
   COLOR_UPDATE_SPEED = 0,
   BACK_COLOR = { r: 0.5, g: 0.01, b: 0.5 },
   TRANSPARENT = true,
-  PALETTE = [{ r: 109 / 255, g: 186 / 255, b: 255 / 255 }],
+  PALETTE = [{ r: 77 / 255, g: 77 / 255, b: 255 / 255 }],
 }) {
   const canvasRef = useRef(null);
 
@@ -1069,8 +1069,6 @@ function SplashCursor({
       const c = PALETTE[Math.floor(Math.random() * PALETTE.length)];
       return { r: c.r * 0.15, g: c.g * 0.2, b: c.b * 0.15 };
     }
-
-
 
     function wrap(value, min, max) {
       const range = max - min;

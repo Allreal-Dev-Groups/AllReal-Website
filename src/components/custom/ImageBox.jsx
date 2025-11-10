@@ -100,7 +100,7 @@ export default function ImageBox({
             : "items-end text-right md:pr-10"
         }`}
       >
-        <SubIntroText className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#00fff1] mb-4 md:mb-6 leading-tight">
+        <SubIntroText className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#00E0FF] mb-4 md:mb-6 leading-tight">
           {title}
         </SubIntroText>
         <SubIntroText className="text-base sm:text-lg md:text-2xl text-gray-200 md:max-w-[90%] leading-relaxed">

@@ -76,11 +76,9 @@ export default function StatusSection() {
         {StatusData.map((item, i) => (
           <div
             key={i}
-            className={`grid-item relative flex items-center justify-center rounded-3xl h-[150px] md:h-[350px] overflow-hidden cursor-pointer transition-transform duration-500 ${
-              i === 0 ? "bg-pink-700" : "bg-gray-800"
-            } ${i % 2 === 1 ? "md:mt-10" : ""}`}
+            className={`grid-item relative flex items-center justify-center rounded-3xl h-[150px] md:h-[350px] overflow-hidden cursor-pointer transition-transform duration-500 bg-neutral-800`}
           >
-            <h3 className="absolute left-6 top-6 md:left-10 md:top-10 md:text-5xl font-semibold text-[#00fff1]">
+            <h3 className="absolute left-6 top-6 md:left-10 md:top-10 md:text-5xl font-semibold text-[#00E0FF]">
               {item.label}
             </h3>
             <span

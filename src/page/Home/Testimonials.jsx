@@ -89,7 +89,7 @@ export default function Testimonials() {
                 <p className="text-gray-300 italic mb-6 text-lg leading-relaxed">
                   “{t.text}”
                 </p>
-                <h3 className="text-xl font-semibold text-[#7400ff]">
+                <h3 className="text-xl font-semibold text-[#8637ff]">
                   {t.name}
                 </h3>
                 <h3 className="text-sx font-medium text-white">

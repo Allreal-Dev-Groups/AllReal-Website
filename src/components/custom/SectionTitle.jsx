@@ -5,7 +5,7 @@ const SectionTitle = ({
   Line_1 = "Text1",
   Line_2 = "Text2",
   fontSize = "8rem",
-  color = "#00fff1",
+  color = "#00E0FF",
 }) => {
   return (
     <>

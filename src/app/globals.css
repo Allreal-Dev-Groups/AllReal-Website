@@ -28,8 +28,16 @@
 [data-theme="dark"] {
   --color-primary: #00fff0;
   --color-secondary: #0d0d0d;
-  --color-bg: #ff00c8;
+  --color-bg: #F9F9FB;
   --color-neutral: #101010;
+}
+
+[data-theme="brand"] {
+  --color-primary: #8637ff;
+  --color-secondary: #1E1E2F;
+  --color-accent: #00E0FF;
+  --color-neutral: #2C2C2C;
+  --color-gradient: linear-gradient(135deg, #1E1E2F 0%, #3E1B7E 100%);
 }
 
 body {

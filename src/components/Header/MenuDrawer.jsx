@@ -54,7 +54,7 @@ export default function MenuDrawer({ isOpen, onToggle }) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 w-screen h-screen  z-100 border-[#5e1aff] backdrop-blur-3xl flex flex-col items-center justify-center overflow-x-hidden"
+      className="fixed inset-0 w-screen h-screen  z-100 border-[#8637ff] backdrop-blur-3xl flex flex-col items-center justify-center overflow-x-hidden"
       style={{ transform: "translateY(100%)" }}
     >
       {/* Close Button */}
@@ -78,7 +78,7 @@ export default function MenuDrawer({ isOpen, onToggle }) {
             className="relative text-3xl md:text-5xl  font-bold text-gray-300 overflow-hidden px-4 py-2 inline-block"
           >
             <span className="relative z-10">{item.name}</span>
-            <span className="fill absolute left-0 top-0 h-full w-0 rounded-br-2xl rounded-tl-2xl bg-white  z-0 "></span>
+            <span className="fill absolute left-0 top-0 h-full w-0 rounded-br-2xl rounded-tl-2xl bg-[#8637ff]  z-0 "></span>
           </Link>
         ))}
       </div>
