@@ -4,7 +4,7 @@ export const siteConfig = {
   author: "Machenn",
   email: "info@machenn.com",
   phone: "+91 8903772381",
-  loacation:"Coimabatore , TN",
+  loacation:"Coimabatore , TN ",
   socials: {
     github: "https://github.com/puviarch",
     linkedin: "https://linkedin.com/in/puviarch",
