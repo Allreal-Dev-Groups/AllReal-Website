@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "Allreal",
   description: "Discover India’s leading VR and Mixed Reality healthcare training solutions. We specialize in immersive medical simulations, AR/VR hospital training, and gamified learning platforms that transform medical education and clinical skill development. As a cutting-edge biomedical XR company, we deliver realistic, data-driven, and interactive experiences for hospitals, universities, and healthcare professionals—advancing the future of medical training through innovation and technology.",
   author: "Machenn",
-  email: "hello@example.com",
-  phone: "+1 (555) 123-4567",
+  email: "info@machenn.com",
+  phone: "+91 8903772381",
   loacation:"Coimabatore , TN",
   socials: {
     github: "https://github.com/puviarch",
