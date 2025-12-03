@@ -54,7 +54,7 @@ export const SCROLL_SETTINGS = {
 
 
 export const assets = [
-  { type: "video", src: "/videos/sample.mp4" },
+  { type: "video", src: "/videos/Machenn_Portfolio_Video.mp4" },
   { type: "image", src: "/images/logo.png" },
 ];
 

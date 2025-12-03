@@ -57,7 +57,7 @@ const VideoSection = () => {
         }}
       >
         <video
-          src="./videos/sample.mp4"
+          src="./videos/Machenn_Portfolio_Video.mp4"
           muted
           playsInline
           loop
