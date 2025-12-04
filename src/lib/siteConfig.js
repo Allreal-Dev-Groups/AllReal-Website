@@ -35,11 +35,11 @@ export const StatusData = [
 
 export const navOption = [
   { name: "Home", url: "/" },
-  { name: "Product Hub", url: "/projects" },
-  { name: "Services", url: "/services" },
-  { name: "Impact stories", url: "/stories" },
+  { name: "Product Hub", url: "/" },
+  { name: "Services", url: "/" },
+  { name: "Impact stories", url: "/" },
   { name: "Insights", url: "/blog" },
-  { name: "Join Us", url: "/contact" },
+  { name: "Join Us", url: "/" },
 ];
 
 export const SCROLL_SETTINGS = {
