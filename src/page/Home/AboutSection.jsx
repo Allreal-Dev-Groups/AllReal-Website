@@ -18,7 +18,7 @@ export default function AboutSection() {
         </div>
       </div>
 
-      <div className="w-full flex justify-end">
+      {/* <div className="w-full flex justify-end">
         <div className="md:max-w-[50%] md:text-2xl">
           <SubIntroText className="text-white text-right md:text-justify ">
             We are ALLREAL — a team of biomedical engineers, designers, and
@@ -29,7 +29,7 @@ export default function AboutSection() {
           </SubIntroText>
           <Button name={"About Us"}  className="mt-10" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
