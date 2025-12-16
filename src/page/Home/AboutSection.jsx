@@ -9,7 +9,7 @@ export default function AboutSection() {
       <div className="w-full flex justify-start">
         <div className="md:max-w-[50%] md:text-2xl">
           <SubIntroText className="text-white">
-            We are ALLREAL — a team of biomedical engineers, designers, and
+            We are ALLREAL a team of biomedical engineers, designers, and
             technologists dedicated to transforming medical training and
             education through immersive technology. We believe in the power of
             virtual, augmented, and mixed reality to make healthcare learning

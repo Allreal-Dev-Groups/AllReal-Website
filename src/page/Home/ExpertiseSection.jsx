@@ -10,7 +10,7 @@ const boxesData = [
     hoverBg: "#222",
   },
   {
-    title: "Experience Lab — Research, Prototyping & Technical Partnership",
+    title: "Experience Lab Research, Prototyping & Technical Partnership",
     description: `Our Experience Lab collaborates with hospitals and universities to research, design, and prototype immersive medical simulations.
 We act as a technical partner for institutions seeking innovation in AR/VR healthcare tools, clinical training modules, and simulation-based education systems.`,
     bgColor: "",
@@ -19,7 +19,7 @@ We act as a technical partner for institutions seeking innovation in AR/VR healt
   {
     title: "Medical Simulations for Consumer Branding",
     description:
-      "We help healthcare organizations visualize their impact through VR storytelling. By creating lifelike medical simulations and mixed reality demonstrations, we enable brands to communicate their innovations more effectively — whether for exhibitions, awareness campaigns, or training showcases.",
+      "We help healthcare organizations visualize their impact through VR storytelling. By creating lifelike medical simulations and mixed reality demonstrations, we enable brands to communicate their innovations more effectively whether for exhibitions, awareness campaigns, or training showcases.",
     bgColor: "",
     hoverBg: "#444",
   },
@@ -39,7 +39,7 @@ export default function ExpertiseSection() {
         />
         <ImageBox
           image="/images/Banner2.jpg"
-          title="Experience Lab — Research, Prototyping & Technical Partnership"
+          title="Experience Lab Research, Prototyping & Technical Partnership"
           text="Our Experience Lab collaborates with hospitals and universities to research, design, and prototype immersive medical simulations.
 We act as a technical partner for institutions seeking innovation in AR/VR healthcare tools, clinical training modules, and simulation-based education systems."
           reverse={true}
@@ -47,7 +47,7 @@ We act as a technical partner for institutions seeking innovation in AR/VR healt
         <ImageBox
           image="/images/Banner3.jpg"
           title="Medical Simulations for Consumer Branding"
-          text="We help healthcare organizations visualize their impact through VR storytelling. By creating lifelike medical simulations and mixed reality demonstrations, we enable brands to communicate their innovations more effectively — whether for exhibitions, awareness campaigns, or training showcases."
+          text="We help healthcare organizations visualize their impact through VR storytelling. By creating lifelike medical simulations and mixed reality demonstrations, we enable brands to communicate their innovations more effectively whether for exhibitions, awareness campaigns, or training showcases."
         />
       </div>
     </section>
