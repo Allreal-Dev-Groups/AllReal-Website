@@ -1,13 +1,16 @@
 export const siteConfig = {
   name: "Allreal",
-  description: "Discover India’s leading VR and Mixed Reality healthcare training solutions. We specialize in immersive medical simulations, AR/VR hospital training, and gamified learning platforms that transform medical education and clinical skill development. As a cutting-edge biomedical XR company, we deliver realistic, data-driven, and interactive experiences for hospitals, universities, and healthcare professionals—advancing the future of medical training through innovation and technology.",
+  description:
+    "Discover India’s leading VR and Mixed Reality healthcare training solutions. We specialize in immersive medical simulations, AR/VR hospital training, and gamified learning platforms that transform medical education and clinical skill development. As a cutting-edge biomedical XR company, we deliver realistic, data-driven, and interactive experiences for hospitals, universities, and healthcare professionals—advancing the future of medical training through innovation and technology.",
   author: "Machenn",
   email: "info@machenn.com",
   phone: "+91 8903772381",
-  loacation:"Coimabatore , TN ",
+  loacation: "Coimabatore , TN ",
   socials: {
-    github: "https://github.com/puviarch",
-    linkedin: "https://linkedin.com/in/puviarch",
+    instagram: "https://www.instagram.com/allreal.io/",
+    linkedin:
+      "https://www.linkedin.com/company/allreal-machenn/posts/?feedView=all",
+    youtube: "https://www.youtube.com/@AllReal-Machenn",
   },
   theme: "dark",
 };
@@ -31,15 +34,14 @@ export const StatusData = [
   },
 ];
 
-
-
 export const navOption = [
   { name: "Home", url: "/" },
-  { name: "Product Hub", url: "/" },
-  { name: "Services", url: "/" },
-  { name: "Impact stories", url: "/" },
-  { name: "Insights", url: "/blog" },
-  { name: "Join Us", url: "/" },
+  // { name: "Product Hub", url: "/" },
+  // { name: "Services", url: "/" },
+  // { name: "Impact stories", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: "Contact us", url: "/#contact_us" },
+  // { name: "Join Us", url: "/" },
 ];
 
 export const SCROLL_SETTINGS = {
@@ -49,9 +51,8 @@ export const SCROLL_SETTINGS = {
   smoothTouch: true,
   touchMultiplier: 1.2,
   gestureDirection: "vertical",
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 };
-
 
 export const assets = [
   { type: "video", src: "/videos/Machenn_Portfolio_Video.mp4" },
@@ -60,8 +61,6 @@ export const assets = [
   { type: "image", src: "/images/Banner2.jpg" },
   { type: "image", src: "/images/Banner3.jpg" },
 ];
-
-
 
 export const testimonials = [
   {

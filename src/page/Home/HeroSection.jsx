@@ -1,10 +1,8 @@
 import { Button, IntroText } from "@/components";
 
-
 export default function HeroSection() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center text-white z-50 ">
-        
       <div className="w-full h-full z-50">
         <IntroText
           highlightWords={["Healthcare", "Immersive", "Reality"]}
@@ -16,17 +14,17 @@ export default function HeroSection() {
           className="text-xs md:text-lg text-gray-300 max-w-4xl mt-6"
           highlightWords={["ALLREAL,"]}
         >
-          At <strong>ALLREAL,</strong> we design next-generation VR and MR
-          simulators that empower healthcare professionals and institutions with
-          experiential learning. Our mission is to make critical medical
-          training accessible, effective, and impactful through immersive
-          technology.
+          At <strong>ALLREAL,</strong> At ALLREAL, we build next-generation VR
+          and MR medical simulators that empower healthcare professionals with
+          experiential, hands-on learning. Our mission is simple: to make
+          critical medical training accessible, effective, and deeply impactful
+          through immersive technology.
         </IntroText>
       </div>
 
       <div className="absolute z-50 pointer-events-auto min-w-[80%] bottom-0 h-[100px] flex justify-between">
-        <Button name={"Explore work"}/>
-        <Button name={"Get in touch"}/>
+        <Button name={"Explore work"} />
+        <Button name={"Get in touch"} />
       </div>
     </section>
   );
