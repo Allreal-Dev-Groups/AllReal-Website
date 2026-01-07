@@ -14,8 +14,8 @@ export default function HeroSection() {
           className="text-xs md:text-lg text-gray-300 max-w-4xl mt-6"
           highlightWords={["ALLREAL,"]}
         >
-          At <strong>ALLREAL,</strong> At ALLREAL, we build next-generation VR
-          and MR medical simulators that empower healthcare professionals with
+          At <strong>ALLREAL,</strong> we build next-generation VR and MR
+          medical simulators that empower healthcare professionals with
           experiential, hands-on learning. Our mission is simple: to make
           critical medical training accessible, effective, and deeply impactful
           through immersive technology.
